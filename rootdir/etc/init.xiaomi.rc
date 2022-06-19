@@ -40,3 +40,13 @@ on post-fs-data
     mkdir /mnt/vendor/persist/fingerprint 0770 system system
     mkdir /data/vendor/fpdump/qfs4008 0770 system system
     mkdir /mnt/vendor/persist/fingerprint/meta 0770 system system
+
+service vendor.sensors-hal-multihal /vendor/bin/hw/android.hardware.sensors-service.xiaomi-multihal
+    override
+    class hal
+    user system
+    group system wakelock context_hub input uhid
+    writepid /dev/cpuset/system-background/tasks
+    socket audio_us_socket_1 seqpacket 0666 system system
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10
