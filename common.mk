@@ -342,6 +342,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti \
     android.hardware.usb.gadget-service.qti
 
+PRODUCT_PACKAGES += \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
+
 PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/usb/etc
 
 PRODUCT_COPY_FILES += \
