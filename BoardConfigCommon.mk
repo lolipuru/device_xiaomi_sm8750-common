@@ -16,6 +16,7 @@ AB_OTA_PARTITIONS += \
     boot \
     vendor_boot \
     dtbo \
+    init_boot \
     vbmeta \
     vbmeta_system \
     odm \
@@ -57,6 +58,10 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_BOOTLOADER_BOARD_NAME := sun
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
+
+# Init Boot
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 # Kernel
 BOARD_KERNEL_PAGESIZE   := 4096
