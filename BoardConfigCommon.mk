@@ -70,6 +70,7 @@ BOARD_BOOTCONFIG := \
     androidboot.hypervisor.protected_vm.supported=0 \
     androidboot.load_modules_parallel=true \
     androidboot.memcg=1 \
+    androidboot.vendor.qspa=true \
     androidboot.usbcontroller=a600000.dwc3 \
     androidboot.selinux=permissive
 
