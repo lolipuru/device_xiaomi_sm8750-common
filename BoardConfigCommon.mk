@@ -48,6 +48,7 @@ AUDIO_FEATURE_ENABLED_SSR := true
 AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
+TARGET_PROVIDES_AUDIO_HAL := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Boot
@@ -152,6 +153,9 @@ DEVICE_MATRIX_FILE := \
     hardware/qcom-caf/common/compatibility_matrix.xml
 
 DEVICE_MANIFEST_SKUS := sun
+DEVICE_MANIFEST_SUN_FILES := \
+    hardware/qcom-caf/sm8750/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
+    hardware/qcom-caf/sm8750/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
