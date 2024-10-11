@@ -730,6 +730,7 @@ vendor/lib64/vendor.qti.hardware.embmsslaidl-V2-ndk.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
 # Fingerprint
+odm/lib64/hw/fingerprint.qcom_us.so:odm/lib64/hw/fingerprint.qcom_us.default.so;FIX_SONAME
 vendor/etc/permissions/qti_fingerprint_interface.xml
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel-V1-ndk.so
 odm/etc/vintf/manifest/fod-aidl.xml
