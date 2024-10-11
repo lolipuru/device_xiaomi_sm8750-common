@@ -121,8 +121,12 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+$(call soong_config_set,xiaomi_hardware_biometrics,use_new_impl,true)
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.xiaomi
+
 PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -218,6 +222,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.xiaomi.rc \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
@@ -237,7 +242,8 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Vndservice manager
 PRODUCT_PACKAGES += \
