@@ -48,6 +48,10 @@ BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# Boot
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sun
 TARGET_NO_BOOTLOADER := true
@@ -64,6 +68,11 @@ BOARD_KERNEL_CMDLINE := \
     swinfo.fingerprint=$(LINEAGE_VERSION) \
     mtdoops.fingerprint=$(LINEAGE_VERSION) \
     bootmonitor.fingerprint=$(LINEAGE_VERSION)
+
+BOARD_BOOTCONFIG := \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
