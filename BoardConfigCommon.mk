@@ -116,3 +116,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Verified Boot
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+
+# Inherit from the proprietary version
+-include vendor/xiaomi/sm8750-common/BoardConfigVendor.mk

@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Call the proprietary setup.
+$(call inherit-product, vendor/xiaomi/sm8750-common/sm8750-common-vendor.mk)
+
 # Enable virtual AB with vendor ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
