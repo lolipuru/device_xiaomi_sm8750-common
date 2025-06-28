@@ -1,0 +1,14 @@
+<manifest version="8.0" type="device" target-level="202404">
+    <hal format="aidl">
+        <name>vendor.qti.sla.service</name>
+        <fqname>ISlaAIDLService/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xiaomi.aidl.minet</name>
+        <fqname>IMiNetAIDLService/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xiaomi.aidl.miwill</name>
+        <fqname>IMiwillAIDLService/default</fqname>
+    </hal>
+</manifest>
