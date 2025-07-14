@@ -90,14 +90,11 @@ vendor/lib64/libvmmem.so
 # AGM
 odm/lib64/libagmdevice.so;DISABLE_CHECKELF
 vendor/lib64/libagm.so
-vendor/lib64/libagmclient.so
-vendor/lib64/libagm_compress_plugin.so;DISABLE_CHECKELF
-vendor/lib64/libagm_mixer_plugin.so;DISABLE_CHECKELF
-vendor/lib64/libagm_pcm_plugin.so;DISABLE_CHECKELF
 vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so;DISABLE_CHECKELF
 
 # Audio (core)
 vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
+vendor/lib64/hw/libaudiocorehal.default.so;DISABLE_CHECKELF
 vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_CHECKELF
 vendor/lib64/hw/libaudioeffecthal.qti.so;DISABLE_CHECKELF
 vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_CHECKELF
@@ -150,7 +147,7 @@ vendor/lib64/libwindns.so;DISABLE_CHECKELF
 vendor/lib64/libxlog.so
 
 # Audio (pal)
-vendor/lib64/libar-pal.so
+vendor/lib64/libar-pal.so;DISABLE_CHECKELF
 vendor/lib64/libpalclient.so
 vendor/lib64/libpaleventnotifier.so
 vendor/lib64/libpalipcservice.so
@@ -197,6 +194,10 @@ vendor/lib64/soundfx/libhwdapaidl.so;DISABLE_CHECKELF
 vendor/lib64/soundfx/libldnhncr.so
 vendor/lib64/soundfx/libloudnessenhanceraidl.so;DISABLE_CHECKELF
 vendor/lib64/soundfx/libmiwndnsprocessingaidl.so;DISABLE_CHECKELF
+vendor/lib64/soundfx/libqcompostprocbundle.so;DISABLE_CHECKELF
+vendor/lib64/soundfx/libqcomvisualizer.so;DISABLE_CHECKELF
+vendor/lib64/soundfx/libqcomvoiceprocessing.so;DISABLE_CHECKELF
+vendor/lib64/soundfx/libvolumelistener.so;DISABLE_CHECKELF
 vendor/lib64/soundfx/libquasar.so;DISABLE_CHECKELF
 vendor/lib64/soundfx/libreverbaidl.so;DISABLE_CHECKELF
 vendor/lib64/soundfx/libreverbwrapper.so
@@ -1852,7 +1853,6 @@ vendor/lib64/libwfduibcsinkinterface_vendor.so
 vendor/lib64/libwfduibcsrc_vendor.so
 vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
-vendor/lib64/qti-audio-types-aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;DISABLE_CHECKELF
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 

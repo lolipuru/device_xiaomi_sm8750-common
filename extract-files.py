@@ -37,6 +37,7 @@ lib_fixups: lib_fixups_user_type = {
         'android.media.audio.common.types-V6-ndk'
     ): lib_fixup_vendor_suffix,
     (
+        'libagmclient',
         'libagmmixer',
         'libc++_shared',
         'libmialgo',
@@ -49,7 +50,6 @@ lib_fixups: lib_fixups_user_type = {
         'android.hardware.graphics.common-V5-ndk',
         'android.hardware.graphics.composer3-V3-ndk',
         'android.hardware.sensors-V2-ndk',
-        'android.hardware.thermal-V2-ndk',
         'android.media.audio.common.types-V3-ndk',
         'vendor.qti.hardware.display.composer3-V1-ndk',
         'vendor.qti.hardware.display.config-V12-ndk'

@@ -49,6 +49,8 @@ AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 TARGET_PROVIDES_AUDIO_HAL := true
+TARGET_PROVIDES_LIBAGM := true
+TARGET_PROVIDES_LIBAR_PAL := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Boot
@@ -154,7 +156,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 
 DEVICE_MATRIX_FILE := \
     $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml \
-    hardware/qcom-caf/common/compatibility_matrix.xml
+    hardware/qcom-caf/common/compatibility_matrix_aidl.xml
 
 DEVICE_MANIFEST_SKUS := sun
 DEVICE_MANIFEST_SUN_FILES := \
