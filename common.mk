@@ -212,6 +212,7 @@ $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
 
 PRODUCT_PACKAGES += \
     product_vm-system_mountpoint \
+    rfs_msm_mpss_readonly_mbnconfig_symlink \
     vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint \
