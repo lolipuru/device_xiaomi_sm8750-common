@@ -29,6 +29,7 @@
             <Attributes> <Usage value="AUDIO_USAGE_VOICE_COMMUNICATION"/> </Attributes>
         </AttributesGroup>
         <AttributesGroup streamType="AUDIO_STREAM_BLUETOOTH_SCO" volumeGroup="bluetooth_sco">
+            <Attributes> <Usage value="AUDIO_USAGE_BLUETOOTH_SCO"/> </Attributes>
             <Attributes> <Flags value="AUDIO_FLAG_SCO"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
@@ -57,6 +58,9 @@
     <ProductStrategy name="STRATEGY_SONIFICATION_RESPECTFUL">
         <AttributesGroup streamType="AUDIO_STREAM_NOTIFICATION" volumeGroup="notification">
             <Attributes> <Usage value="AUDIO_USAGE_NOTIFICATION"/> </Attributes>
+            <Attributes> <Usage value="AUDIO_USAGE_NOTIFICATION_COMMUNICATION_REQUEST"/> </Attributes>
+            <Attributes> <Usage value="AUDIO_USAGE_NOTIFICATION_COMMUNICATION_INSTANT"/> </Attributes>
+            <Attributes> <Usage value="AUDIO_USAGE_NOTIFICATION_COMMUNICATION_DELAYED"/> </Attributes>
             <Attributes> <Usage value="AUDIO_USAGE_NOTIFICATION_EVENT"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
