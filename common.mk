@@ -190,6 +190,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # Mountpoint
+$(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
+
 PRODUCT_PACKAGES += \
     product_vm-system_mountpoint
 
