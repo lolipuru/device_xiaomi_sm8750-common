@@ -63,20 +63,34 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audioadsprpcd \
+    audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
     libsoundtriggerhal.qti
 
 PRODUCT_PACKAGES += \
+    libaudiochargerlistener \
+    libaudiopreprocessing \
+    libaudioserviceexampleimpl \
     libbatterylistener \
-    libpalclient \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libsndcardparser \
-    libvolumelistener \
+    libbundleaidl \
+    libcustomva_intf \
+    libldnhncr \
+    libdownmixaidl \
+    libdynproc \
+    libdynamicsprocessingaidl \
+    libeffectproxy \
     libhfp_pal \
-    libfmpal
+    libhotword_intf \
+    libfmpal \
+    libloudnessenhanceraidl \
+    libpalclient \
+    libpalipcservice \
+    libpaleventnotifier \
+    libreverbaidl \
+    libreverbwrapper \
+    libvisualizeraidl \
+    libvui_intf
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8750/audio/primary-hal
 

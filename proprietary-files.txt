@@ -107,15 +107,11 @@ vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudioplatformconverter.qti.so
 vendor/lib64/libav_miwnsencoder.so
-vendor/lib64/libbatterylistener.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libcustomva_intf.so
 vendor/lib64/libdlbpreg.so
-vendor/lib64/libfmpal.so
-vendor/lib64/libhfp_pal.so
 vendor/lib64/libmcs.so
 vendor/lib64/libmidatabase.so
 vendor/lib64/libmis6.so
@@ -166,26 +162,15 @@ vendor/etc/microphone_characteristics.xml
 vendor/etc/usecaseKvManager.xml
 
 # Audio FX modules
-vendor/lib64/soundfx/libaudiopreprocessing.so
-vendor/lib64/soundfx/libbundleaidl.so
 vendor/lib64/soundfx/libbundlewrapper.so
 vendor/lib64/soundfx/libdlbvolaidl.so
-vendor/lib64/soundfx/libdownmixaidl.so
 vendor/lib64/soundfx/libdownmix.so
-vendor/lib64/soundfx/libdynamicsprocessingaidl.so
-vendor/lib64/soundfx/libdynproc.so
-vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libhwdapaidl.so
-vendor/lib64/soundfx/libldnhncr.so
-vendor/lib64/soundfx/libloudnessenhanceraidl.so
 vendor/lib64/soundfx/libmiwndnsprocessingaidl.so
 vendor/lib64/soundfx/libquasar.so
-vendor/lib64/soundfx/libreverbaidl.so
-vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libspatializeraidl.so
 vendor/lib64/soundfx/libswgamedapaidl.so
 vendor/lib64/soundfx/libswspatializeraidl.so
-vendor/lib64/soundfx/libvisualizeraidl.so
 vendor/lib64/soundfx/libvisualizer.so
 
 # Batteryantiaging Service
@@ -984,7 +969,6 @@ vendor/lib64/libqtikeymint.so
 # Listen
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
-vendor/lib64/libhotword_intf.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 
@@ -1111,7 +1095,6 @@ vendor/lib64/libsn300u_fw.so
 vendor/lib64/libstnfc-auth.so
 vendor/lib64/libstnfc-streset.so
 vendor/lib64/libvui_dmgr.so
-vendor/lib64/libvui_intf.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
 vendor/lib64/nfc_nci.st21nfc.st.so
 vendor/lib64/vendor.nxp.hardware.nfc@2.0.so
