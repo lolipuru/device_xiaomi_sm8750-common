@@ -316,7 +316,7 @@ vendor/etc/charger_diag.cfg
 vendor/etc/charger_fw_fstab.qti
 
 # CIT Sensor
-odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl
+odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl;DISABLE_CHECKELF
 odm/etc/cit_param_config.json
 odm/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc
 odm/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice.aidl.xml
@@ -1031,9 +1031,9 @@ vendor/lib64/libqcodec2_imgtxrfilter.so
 vendor/lib64/libqcodec2_mockfilter.so
 vendor/lib64/libqcodec2_mockfrcfilter.so
 vendor/lib64/libqcodec2_platform.so
-vendor/lib64/libqcodec2_psfilter.so
-vendor/lib64/libqcodec2_rffilter.so
-vendor/lib64/libqcodec2_srfilter.so
+vendor/lib64/libqcodec2_psfilter.so;DISABLE_CHECKELF
+vendor/lib64/libqcodec2_rffilter.so;DISABLE_CHECKELF
+vendor/lib64/libqcodec2_srfilter.so;DISABLE_CHECKELF
 vendor/lib64/libqcodec2_streaminteg_filter.so
 vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
