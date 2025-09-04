@@ -66,12 +66,4 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.weaver</name>
-        <version>2</version>
-        <interface>
-            <name>IWeaver</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>
