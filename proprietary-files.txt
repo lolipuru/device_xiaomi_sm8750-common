@@ -100,7 +100,6 @@ vendor/lib64/hw/libaudiocorehal.default.so
 vendor/lib64/hw/libaudiocorehal.qti.so
 vendor/lib64/hw/libaudioeffecthal.qti.so
 vendor/lib64/libadm.so
-vendor/lib64/libagmmixer.so
 vendor/lib64/libar-pal.so
 vendor/lib64/libarmemlog.so
 vendor/lib64/libaudio_log_utils.so
@@ -127,6 +126,11 @@ vendor/lib64/libtiantongpal.so
 vendor/lib64/libVoiceSdk.so
 vendor/lib64/libwindns.so;DISABLE_CHECKELF
 vendor/lib64/libxlog.so
+
+# Audio (AGM)
+vendor/lib64/libagm.so
+vendor/lib64/libagmipcservice.so
+vendor/lib64/libagmmixer.so
 
 # Audio Config
 odm/etc/audio/audio_module_config_primary.xml
