@@ -226,6 +226,11 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.graphics.common-V6-ndk.so'
         )
         .add_needed('libcodec2_shim.so'),
+    (
+       'vendor/lib64/libar-pal.so',
+       'odm/lib64/libaudioroute_ext.so',
+    ): blob_fixup()
+        .add_needed('libaudioroute-xiaomi.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
