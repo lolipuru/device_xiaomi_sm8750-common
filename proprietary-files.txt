@@ -114,6 +114,7 @@ vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdlbpreg.so
 vendor/lib64/libmcs.so
 vendor/lib64/libmidatabase.so
+vendor/lib64/libmikaraoke.so
 vendor/lib64/libmis6.so
 vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisight.so
