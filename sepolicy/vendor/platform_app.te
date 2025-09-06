@@ -1,0 +1,7 @@
+allow platform_app adsprpcd_file:dir { getattr search };
+allow platform_app hal_aidlbgservice_service:service_manager find;
+
+get_prop(platform_app, vendor_audio_prop)
+get_prop(platform_app, vendor_camera_sensor_prop)
+get_prop(platform_app, vendor_camera_p3enable_prop)
+get_prop(platform_app, vendor_displayfeature_prop)

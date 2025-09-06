@@ -1,0 +1,24 @@
+type vendor_hal_fingerprint_service_xiaomi, hal_service_type, protected_service, service_manager_type;
+
+allow hal_fingerprint_default init:unix_stream_socket connectto;
+allow hal_fingerprint_default property_socket:sock_file write;
+allow hal_fingerprint_default self:netlink_socket { bind create read write };
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_default vendor_dmabuf_qseecom_ta_heap_device:chr_file { ioctl open read };
+allow hal_fingerprint_default vendor_dmabuf_qseecom_heap_device:chr_file { ioctl open read };
+allow hal_fingerprint_default vendor_fingerprint_data_file:dir create_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:dir create_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:file create_file_perms;
+allow hal_fingerprint_default vendor_fingerprint_device:chr_file rwx_file_perms;
+dontaudit hal_fingerprint_default vendor_hal_perf2_service:service_manager find;
+
+get_prop(hal_fingerprint_default, vendor_fp_prop)
+set_prop(hal_fingerprint_default, vendor_fp_prop)
+
+get_prop(hal_fingerprint_default, vendor_fp_info_prop)
+set_prop(hal_fingerprint_default, vendor_fp_info_prop)
+
+add_service(hal_fingerprint_default, vendor_hal_fingerprint_service_xiaomi)
+
+binder_call(hal_fingerprint_default, vendor_hal_perf_default)
