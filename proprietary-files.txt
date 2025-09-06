@@ -236,7 +236,9 @@ vendor/framework/androidx.camera.extensions.impl.jar
 vendor/etc/init/vendor.qti.camera.provider-service_64.rc
 vendor/etc/permissions/camera_extensions.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidl.intentaware-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.dynamiccameraserver.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml
 
 # Camera Firmware
@@ -565,6 +567,7 @@ vendor/lib64/libqdcm-algo.so
 vendor/lib64/libqdcm-json-mode-parser.so
 vendor/lib64/libqdcm-mode-parser.so
 vendor/lib64/libqdutils.so
+vendor/lib64/libsdmclient.so
 vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmdal.so
 vendor/lib64/libsdmutils.so
@@ -931,6 +934,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.uceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.diaghal-V1-ndk.so;MODULE_SUFFIX=-vendor
 
 # Init
 vendor/bin/init.class_main.sh
