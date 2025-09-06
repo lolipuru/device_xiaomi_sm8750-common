@@ -14,6 +14,10 @@
 /(vendor|system/vendor)/bin/displayfeature u:object_r:vendor_displayfeature_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.displayfeature_aidl-service u:object_r:vendor_hal_displayfeature_xiaomi_default_exec:s0
 
+# Dolby
+/vendor/bin/hw/vendor\.dolby\.dms\.service                             u:object_r:hal_aidl_dms_default_exec:s0
+/vendor/bin/hw/vendor\.dolby\.media\.c2-default-service-dax            u:object_r:mediacodec_exec:s0
+
 # Fingerprint
 /data/vendor/misc/mi_fp(/.*)? u:object_r:vendor_fingerprint_data_file:s0
 /dev/goodix_fp u:object_r:vendor_fingerprint_device:s0

@@ -1,0 +1,9 @@
+type hal_aidl_dms_default, domain;
+type hal_aidl_dms_default_exec, exec_type, file_type, vendor_file_type;
+
+type hal_aidl_dms_service, protected_service, service_manager_type;
+
+allow hal_aidl_dms_client hal_aidl_dms_server:binder { call transfer };
+
+get_prop(hal_aidl_dms_default, vendor_audio_prop)
+set_prop(hal_aidl_dms_default, vendor_audio_prop)

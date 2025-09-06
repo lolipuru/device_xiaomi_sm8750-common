@@ -10,6 +10,9 @@ vendor.xiaomi.hardware.display.mihwcextension.IMiHwcExtension/default u:object_r
 # Display
 vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default       u:object_r:vendor_hal_displayfeature_xiaomi_service:s0
 
+# Dolby
+vendor.dolby.dms.IDms/default    u:object_r:hal_aidl_dms_service:s0
+
 # Fingerprint
 vendor.xiaomi.hardware.fx.tunnel.IMiFxTunnel/default                    u:object_r:vendor_hal_fingerprint_service_xiaomi:s0
 
