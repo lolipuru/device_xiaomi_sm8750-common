@@ -11,4 +11,9 @@
         <name>vendor.xiaomi.aidl.miwill</name>
         <fqname>IMiwillAIDLService/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>xiaomi.system.hypsys.common</name>
+        <fqname>IHypSysSsi/default</fqname>
+        <fqname>IHypSysSsiIntl/default</fqname>
+    </hal>
 </manifest>
