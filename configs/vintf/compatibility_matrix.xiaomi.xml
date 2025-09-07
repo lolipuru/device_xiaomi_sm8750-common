@@ -403,4 +403,19 @@
             <instance>default</instance>
         </interface>
     </hal>
+   <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.qasr</name>
+        <version>2</version>
+        <interface>
+            <name>IQasr</name>
+            <instance>default</instance>
+        </interface>
+   </hal>
+   <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.framecapturemanager</name>
+        <interface>
+            <name>IFrameCaptureManager</name>
+            <instance>default</instance>
+        </interface>
+   </hal>
 </compatibility-matrix>

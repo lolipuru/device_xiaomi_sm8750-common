@@ -7,6 +7,7 @@ persist.vendor.cne.feature=1
 # Media
 media.aac_51_output_enabled=true
 media.settings.xml=/vendor/etc/media_profiles_sun.xml
+ro.mediaserver.64b.enable=true
 
 # NFC
 ro.nfc.port=I2C
