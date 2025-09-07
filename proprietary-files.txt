@@ -95,6 +95,7 @@ vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/vintf/manifest/audioeffectservice_qti.xml
 vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
+vendor/etc/vintf/manifest/qasr_vintf.xml
 vendor/lib64/android.media.audio.common.types-V6-ndk.so
 vendor/lib64/hw/libaudiocorehal.default.so
 vendor/lib64/hw/libaudiocorehal.qti.so
@@ -122,12 +123,14 @@ vendor/lib64/libmisops.so
 vendor/lib64/libmisoundfx_aidl_ext.so
 vendor/lib64/libmisoundsa.so
 vendor/lib64/libpal_net_if.so
+vendor/lib64/libqasr.so
 vendor/lib64/libqtigefar.so
 vendor/lib64/libtensorflowlite_c.so
 vendor/lib64/libtiantongpal.so
 vendor/lib64/libVoiceSdk.so
 vendor/lib64/libwindns.so;DISABLE_CHECKELF
 vendor/lib64/libxlog.so
+vendor/lib64/vendor.qti.hardware.qasr-V1-ndk.so
 
 # Audio (AGM)
 vendor/lib64/libagm.so
@@ -237,6 +240,7 @@ odm/etc/vintf/manifest/misensor_camera.xml
 vendor/framework/androidx.camera.extensions.impl.jar
 vendor/etc/init/vendor.qti.camera.provider-service_64.rc
 vendor/etc/permissions/camera_extensions.xml
+vendor/etc/vintf/manifest/vendor.qti.camera.provider.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidl.intentaware-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
@@ -980,6 +984,7 @@ vendor/lib64/libqtikeymint.so
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
 vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/liblistensoundmodelaidl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 
 # Media
