@@ -3,8 +3,6 @@ aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 persist.vendor.audio.auto.scenario=true
-persist.vendor.audio.auto.scenario=true
-persist.vendor.audio.misound.disable=true
 persist.vendor.audio.misound.disable=true
 ro.audio.flinger_standbytime_ms=2000
 ro.audio.monitorRotation=true
@@ -81,11 +79,12 @@ persist.vendor.qcom.bluetooth.dualmode_transport_support=true
 persist.vendor.qcom.bluetooth.fmd_config_info=80:0C:60:90:0F:00:00:14:01
 persist.vendor.qcom.bluetooth.fmd_header=8:02:01:06:18:16:AA:FE:40
 persist.vendor.qcom.bluetooth.lossless_aptx_adaptive_le.enabled=true
-persist.vendor.qcom.bluetooth.lossless_aptx_adaptive_le.enabled=true
 
 # Camera
-ro.camera.disableJpegR=true
-ro.camerax.extensions.enabled=false
+ro.camera.enableCamera1MaxZsl=1
+ro.camera.disableHeicUltraHDR=true
+ro.camera.resultFmqSize=4194304
+ro.camerax.extensions.enabled=true
 
 # Display
 vendor.gralloc.disable_ubwc=0
@@ -191,12 +190,16 @@ vendor.gatekeeper.is_security_level_spu=0
 
 # Media
 debug.stagefright.c2inputsurface=-1
+media.c2.hal.selection=aidl
 
 # QCOM
 ro.soc.manufacturer=QTI
 
 # QCOMsysD
 persist.vendor.qcomsysd.enabled=1
+
+# QCOM Fingerprint
+persist.vendor.qfp=true
 
 # Radio
 keyguard.no_require_sim=true
@@ -207,6 +210,8 @@ persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.sib16_support=1
 persist.vendor.rcs.singlereg.feature=1
+ro.vendor.radio.build_region=cn
+ro.vendor.radio.build_profile=miui
 ro.com.android.dataroaming=true
 
 # USB

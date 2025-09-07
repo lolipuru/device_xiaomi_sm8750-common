@@ -60,7 +60,6 @@ blob_fixups: blob_fixups_user_type = {
         ),
      (
        'odm/bin/hw/vendor.xiaomi.hw.touchfeature-service',
-       'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
        'odm/lib64/hw/displayfeature.default.so',
        'odm/lib64/libadaptivehdr.so',
        'odm/lib64/libcolortempmode.so',
@@ -137,6 +136,11 @@ blob_fixups: blob_fixups_user_type = {
         ),
     (
        'vendor/lib64/libmisoundfx_aidl_ext.so',
+       'vendor/lib64/soundfx/libqcomvoiceprocessing.so',
+       'vendor/lib64/soundfx/libqcompostprocbundle.so',
+       'vendor/lib64/soundfx/libvolumelistener.so',
+       'vendor/lib64/soundfx/libqcomvisualizer.so',
+       'vendor/lib64/soundfx/liblvacfsprocessingaidl.so',
        'vendor/lib64/soundfx/libquasar.so',
     ): blob_fixup()
         .replace_needed(
@@ -231,6 +235,30 @@ blob_fixups: blob_fixups_user_type = {
        'odm/lib64/libaudioroute_ext.so',
     ): blob_fixup()
         .add_needed('libaudioroute-xiaomi.so'),
+     (
+       'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
+     ): blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.common-V5-ndk.so',
+            'android.hardware.graphics.common-V6-ndk.so'
+        )
+        .replace_needed(
+            'android.hardware.sensors-V2-ndk.so',
+            'android.hardware.sensors-V3-ndk.so'
+        ),
+    (
+       'vendor/lib64/libar-pal.so',
+       'odm/lib64/libaudioroute_ext.so',
+    ): blob_fixup()
+        .add_needed('libaudioroute-xiaomi.so'),
+     (
+       'odm/lib64/libqc_hal.so',
+       'odm/lib64/hw/fingerprint.qcom_us.default.so',
+     ): blob_fixup()
+        .replace_needed(
+            'android.hardware.biometrics.fingerprint-V5-ndk.so',
+            'android.hardware.biometrics.fingerprint-V4-ndk.so'
+        ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
