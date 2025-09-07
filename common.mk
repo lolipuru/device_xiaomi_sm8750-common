@@ -66,10 +66,6 @@ PRODUCT_PACKAGES += \
     libsoundtriggerhal.qti
 
 PRODUCT_PACKAGES += \
-    libagm_compress_plugin \
-    libagm_mixer_plugin \
-    libagm_pcm_plugin \
-    libagmclient \
     libaudiochargerlistener \
     libaudiopreprocessing \
     libaudioserviceexampleimpl \
@@ -117,6 +113,10 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti.recovery
 
 # Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider-V1-external-impl \
+    android.hardware.camera.provider-V1-external-service
+
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
