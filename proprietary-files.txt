@@ -153,20 +153,14 @@ vendor/lib64/libagmipcservice.so
 vendor/lib64/libagmmixer.so
 
 # Audio Config
-odm/etc/audio/audio_module_config_primary.xml
-odm/etc/audio/sku_sun_qssi/audio_policy_configuration.xml
 odm/etc/audio/sku_sun/adsp_sleep_monitor.conf
 odm/etc/backend_conf.xml
 odm/etc/usecaseKvManager.xml
-vendor/etc/audio_policy_configuration.xml
-vendor/etc/audio/audio_module_config_primary.xml
-vendor/etc/audio/sku_sun_qssi/audio_policy_configuration.xml
 vendor/etc/audio/sku_sun/adsp_sleep_monitor.conf
 vendor/etc/audio/sku_sun/audio_effects_config_stub.xml
 vendor/etc/audio/sku_sun/audio_effects_config.xml
 vendor/etc/audio/sku_sun/audio_effects.conf
 vendor/etc/audio/sku_sun/audio_effects.xml
-vendor/etc/audio/sku_sun/audio_policy_configuration.xml
 vendor/etc/audio/sku_sun/mixer_paths_sun_cdp.xml
 vendor/etc/audio/sku_sun/mixer_paths_sun_mtp_wsa883x_qmp.xml
 vendor/etc/audio/sku_sun/mixer_paths_sun_mtp.xml
