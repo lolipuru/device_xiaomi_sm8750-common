@@ -47,6 +47,8 @@ vendor.audio.support.16bit.record=true
 # Camera
 debug.config.video.p3.encode.support=true
 debug.config.video.p3.decode.support=true
+ro.camera.disableJpegR=true
+ro.camerax.extensions.enabled=true
 
 # Display
 ro.vendor.display.type=oled
@@ -74,11 +76,12 @@ ro.vendor.display.lastnozerobrightness.initvalue=794
 ro.vendor.display.video_or_camera_fps.support=true
 ro.vendor.display.set_fps_stat_timer_ms=250
 ro.vendor.display.dbi.support=qcom
-vendor.display.boost_cpu_layer_number_threshold=10
+vendor.display.boost_cpu_layer_number_threshold=12
 vendor.display.disable_3d_adaptive_tm=1
 vendor.display.disable_stc_dimming=1
 vendor.display.disable_sdr_dimming=0
 vendor.display.disable_cwb_call=0
+vendor.display.enable_cwb_notify_sensor=1
 vendor.display.enable_aod_insert_black_frame=1
 vendor.display.enable_hdr10_gpu_target=0
 vendor.display.enable_demura=1
@@ -125,6 +128,9 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 # Sensors
 persist.vendor.debug.collision.dfx=true
 persist.vendor.sensor.mischeck=true
+
+# Thermal
+persist.vendor.tracking.dfs=true
 
 # Partition
 ro.product.property_source_order=odm,vendor,product,system_ext,system

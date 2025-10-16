@@ -24,6 +24,7 @@ namespace_imports = [
     'hardware/qcom-caf/wlan',
     'hardware/qcom-caf/sm8750',
     'hardware/xiaomi',
+    'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
 ]
@@ -36,28 +37,55 @@ lib_fixups: lib_fixups_user_type = {
     (
         'libc++_shared',
         'libmialgo',
-        'vendor.qti.hardware.display.config-V12-ndk', # TEMP
+        'libaudioserviceexampleimpl',
     ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/lib64/libwfdmmsrc_proprietary.so',
+    ): blob_fixup()
+        .replace_needed(
+            'android.media.audio.common.types-V2-ndk.so', 
+            'android.media.audio.common.types-V3-ndk.so'
+        ),
+    'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
+        .replace_needed('android.hardware.audio.core.sounddose-V1-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so'),
+    'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.core.sounddose-V2-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so')
+        .replace_needed('android.hardware.bluetooth.audio-impl.so', 'android.hardware.bluetooth.audio-impl_xiaomi.so')
+        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_xiaomi.so')
+        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_xiaomi.so'),
+    'vendor/lib64/android.hardware.bluetooth.audio-impl_xiaomi.so': blob_fixup()
+        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_xiaomi.so'),
+    (
+        'vendor/lib64/soundfx/libbundleaidl.so',
+        'vendor/lib64/soundfx/libdlbvolaidl.so',
+        'vendor/lib64/soundfx/libhwdapaidl.so',
+        'vendor/lib64/soundfx/liblvacfsprocessingaidl.so',
+        'vendor/lib64/soundfx/libmiwndnsprocessingaidl.so',
+        'vendor/lib64/soundfx/libozoaidl.so',
+        'vendor/lib64/soundfx/libspatializeraidl.so',
+        'vendor/lib64/soundfx/libswgamedapaidl.so',
+        'vendor/lib64/soundfx/libswspatializeraidl.so',
+        'vendor/lib64/libswspatializeraidl_ext.so',
+    ): blob_fixup()
+        .replace_needed(
+            'libaudio_aidl_conversion_common_ndk.so', 
+            'libaudio_aidl_conversion_common_ndk_xiaomi.so'
+        ),
      (
        'vendor/lib64/libsxrservice.so'
      ): blob_fixup()
         .replace_needed(
             'android.hardware.common-V2-ndk_platform.so',
             'android.hardware.common-V2-ndk.so'
-        )
-
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V3-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
         ),
+    (
+        'vendor/lib64/libapengine.so',
+        'vendor/lib64/libqti-perfd.so',
+    ): blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V5-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so'),
      (
        'odm/bin/hw/vendor.xiaomi.hw.touchfeature-service',
        'odm/lib64/hw/displayfeature.default.so',
@@ -79,141 +107,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.sensors-V2-ndk.so',
             'android.hardware.sensors-V3-ndk.so'
-        ),
-    (
-        'vendor/lib64/hw/libaudiocorehal.qti.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.effect-V2-ndk.so',
-            'android.hardware.audio.effect-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V3-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
-        )
-
-        .replace_needed(
-            'android.hardware.audio.core.sounddose-V1-ndk.so',
-            'android.hardware.audio.core.sounddose-V3-ndk.so'
-        ),
-    (
-       'vendor/lib64/hw/libaudioeffecthal.qti.so',
-       'vendor/lib64/libswspatializeraidl_ext.so',
-       'vendor/lib64/soundfx/libbundleaidl.so',
-       'vendor/lib64/soundfx/libdlbvolaidl.so',
-       'vendor/lib64/soundfx/libdownmixaidl.so',
-       'vendor/lib64/soundfx/libdynamicsprocessingaidl.so',
-       'vendor/lib64/soundfx/libhwdapaidl.so',
-       'vendor/lib64/soundfx/libloudnessenhanceraidl.so',
-       'vendor/lib64/soundfx/libmiwndnsprocessingaidl.so',
-       'vendor/lib64/soundfx/libreverbaidl.so',
-       'vendor/lib64/soundfx/libswgamedapaidl.so',
-       'vendor/lib64/soundfx/libswspatializeraidl.so',
-       'vendor/lib64/soundfx/libvisualizeraidl.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.effect-V2-ndk.so',
-            'android.hardware.audio.effect-V3-ndk.so'
-        ),
-    (
-       'vendor/lib64/libaudioplatformconverter.qti.so',
-       'vendor/lib64/libqtigefar.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V3-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
-        ),
-    (
-       'vendor/lib64/libmisoundfx_aidl_ext.so',
-       'vendor/lib64/soundfx/libqcomvoiceprocessing.so',
-       'vendor/lib64/soundfx/libqcompostprocbundle.so',
-       'vendor/lib64/soundfx/libvolumelistener.so',
-       'vendor/lib64/soundfx/libqcomvisualizer.so',
-       'vendor/lib64/soundfx/liblvacfsprocessingaidl.so',
-       'vendor/lib64/soundfx/libquasar.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.effect-V2-ndk.so',
-            'android.hardware.audio.effect-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V3-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
-        ),
-    (
-        'vendor/lib64/soundfx/libspatializeraidl.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.effect-V2-ndk.so',
-            'android.hardware.audio.effect-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V3-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
-        ),
-    (
-       'vendor/lib64/hw/libaudiocorehal.default.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V3-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
-        ),
-    (
-       'vendor/lib64/libwfdmmsrc_proprietary.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        )
-
-        .replace_needed(
-            'android.media.audio.common.types-V2-ndk.so',
-            'android.media.audio.common.types-V4-ndk.so'
-        ),
-    (
-       'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.bluetooth.audio-V4-ndk.so',
-            'android.hardware.bluetooth.audio-V5-ndk.so'
-        )
-
-        .replace_needed(
-            'android.hardware.audio.core-V2-ndk.so',
-            'android.hardware.audio.core-V3-ndk.so'
-        ),
-    (
-       'vendor/lib64/btaudio_offload_if.so',
-       'vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so',
-       'vendor/lib64/hw/audio.bluetooth_qti.default.so',
-       'vendor/lib64/libbluetooth_audio_session_aidl_qti.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.bluetooth.audio-V4-ndk.so',
-            'android.hardware.bluetooth.audio-V5-ndk.so'
         ),
     (
        'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
@@ -246,11 +139,6 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.sensors-V2-ndk.so',
             'android.hardware.sensors-V3-ndk.so'
         ),
-    (
-       'vendor/lib64/libar-pal.so',
-       'odm/lib64/libaudioroute_ext.so',
-    ): blob_fixup()
-        .add_needed('libaudioroute-xiaomi.so'),
      (
        'odm/lib64/libqc_hal.so',
        'odm/lib64/hw/fingerprint.qcom_us.default.so',

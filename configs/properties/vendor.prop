@@ -4,9 +4,12 @@ aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 persist.vendor.audio.auto.scenario=true
 persist.vendor.audio.misound.disable=true
+persist.vendor.audio.thread.ozonotify=false
 ro.audio.flinger_standbytime_ms=2000
 ro.audio.monitorRotation=true
 ro.audio.spatializer_enabled=true
+vendor.audio.hal.aidl.enabled=true
+vendor.audio.hal.output.suspend.supported=true
 ro.vendor.audio.aiasst.support=true
 ro.vendor.audio.btsamplerate.adaptive=true
 ro.vendor.audio.dualadc.support=true
@@ -72,6 +75,7 @@ bluetooth.profile.mcp.server.enabled=true
 bluetooth.profile.vcp.controller.enabled=true
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-lhdc
 persist.bluetooth.a2dp_offload.disabled=false
+persist.bluetooth.leaudio_offload.disabled=false
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-lhdc
 persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
@@ -79,6 +83,10 @@ persist.vendor.qcom.bluetooth.dualmode_transport_support=true
 persist.vendor.qcom.bluetooth.fmd_config_info=80:0C:60:90:0F:00:00:14:01
 persist.vendor.qcom.bluetooth.fmd_header=8:02:01:06:18:16:AA:FE:40
 persist.vendor.qcom.bluetooth.lossless_aptx_adaptive_le.enabled=true
+persist.vendor.qti.btadvaudio.target.support.xpan=true
+ro.vendor.audio.btsamplerate.adaptive=true
+ro.vendor.audio.misound.bluetooth.enable=false
+ro.vendor.bluetooth.btconfigstore=false
 
 # Camera
 ro.camera.enableCamera1MaxZsl=1
@@ -109,6 +117,7 @@ vendor.display.disable_offline_rotator=1
 vendor.display.enable_async_powermode=0
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.enable_early_wakeup=1
+vendor.gralloc.enable_snapalloc=1
 
 # Displayfeature
 ro.vendor.displayfeature.dump=true
