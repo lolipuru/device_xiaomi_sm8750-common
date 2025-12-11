@@ -147,7 +147,7 @@ vendor/lib64/libpaleventnotifier.so
 vendor/lib64/libpalipcservice.so
 vendor/lib64/libqasr.so
 vendor/lib64/libqtigefar.so;DISABLE_DEPS
-vendor/lib64/libtensorflowlite_c.so
+vendor/lib64/libtensorflowlite_c.so:vendor/lib64/libtensorflowlite_c_vendor.so;FIX_SONAME
 vendor/lib64/libtiantongpal.so
 vendor/lib64/libultrasound_notify.so
 vendor/lib64/libVoiceSdk.so
