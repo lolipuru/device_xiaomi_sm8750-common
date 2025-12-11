@@ -82,10 +82,17 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.common-V2-ndk.so'
         ),
     (
-        'vendor/lib64/libapengine.so',
         'vendor/lib64/libqti-perfd.so',
     ): blob_fixup()
         .replace_needed('vendor.qti.hardware.display.config-V5-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so'),
+    (
+        'vendor/lib64/libapengine.so',
+    ): blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V5-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so')
+        .replace_needed(
+            'libtinyxml2.so',
+            'libtinyxml2-v34.so'
+        ),
      (
        'odm/bin/hw/vendor.xiaomi.hw.touchfeature-service',
        'odm/lib64/hw/displayfeature.default.so',
@@ -108,12 +115,27 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.sensors-V2-ndk.so',
             'android.hardware.sensors-V3-ndk.so'
         ),
+     (
+       'odm/lib64/hw/displayfeature.default.so',
+     ): blob_fixup()
+        .replace_needed(
+            'android.hardware.sensors-V2-ndk.so',
+            'android.hardware.sensors-V3-ndk.so'
+        )
+        .replace_needed(
+            'libtinyxml2.so',
+            'libtinyxml2-v34.so'
+        ),
     (
        'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
     ): blob_fixup()
         .replace_needed(
             'vendor.qti.hardware.display.composer3-V1-ndk.so',
             'vendor.qti.hardware.display.composer3-V3-ndk.so'
+        )
+        .replace_needed(
+            'libtinyxml2.so',
+            'libtinyxml2-v34.so'
         ),
     (
        'vendor/lib64/libqcodec2_core.so',
@@ -138,6 +160,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.sensors-V2-ndk.so',
             'android.hardware.sensors-V3-ndk.so'
+        )
+        .replace_needed(
+            'libtinyxml2.so',
+            'libtinyxml2-v34.so'
         ),
      (
        'odm/lib64/libqc_hal.so',
@@ -146,6 +172,27 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.biometrics.fingerprint-V5-ndk.so',
             'android.hardware.biometrics.fingerprint-V4-ndk.so'
+        ),
+     (
+       'odm/lib64/libmiXmlParser.so',
+       'vendor/bin/hw/audiohalservice.qti',
+       'vendor/bin/poweropt-service',
+       'vendor/lib64/libaodoptfeature.so',
+       'vendor/lib64/libaudiocloudctrl.so',
+       'vendor/lib64/libcamerapoweroptfeature.so',
+       'vendor/lib64/libgamepoweroptfeature.so',
+       'vendor/lib64/liblearningmodule.so',
+       'vendor/lib64/liboffscreenpoweroptfeature.so',
+       'vendor/lib64/libpowercallback.so',
+       'vendor/lib64/libpowercore.so',
+       'vendor/lib64/libpsmoptfeature.so',
+       'vendor/lib64/libsdmclient.so',
+       'vendor/lib64/libstandbyfeature.so',
+       'vendor/lib64/libvideooptfeature.so',
+     ): blob_fixup()
+        .replace_needed(
+            'libtinyxml2.so',
+            'libtinyxml2-v34.so'
         ),
 }  # fmt: skip
 
