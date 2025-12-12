@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
     libvui_intf
 
 PRODUCT_PACKAGES += \
+    libaudioutils_shim \
     libalsautilsv2.vendor \
     libtinyalsav2.vendor \
     libmediautils_vendor.vendor

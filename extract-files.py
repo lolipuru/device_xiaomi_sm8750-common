@@ -52,6 +52,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
         .replace_needed('android.hardware.audio.core.sounddose-V1-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so'),
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
+        .add_needed('libaudioutils_shim.so')
         .replace_needed('android.hardware.audio.core.sounddose-V2-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so')
         .replace_needed('android.hardware.bluetooth.audio-impl.so', 'android.hardware.bluetooth.audio-impl_xiaomi.so')
         .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_xiaomi.so')
