@@ -54,7 +54,8 @@ class SM8750UdfpsHandler : public UdfpsHandler {
 
     void onAcquired(int32_t result, int32_t vendorCode) {
         LOG(DEBUG) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
-        if (static_cast<AcquiredInfo>(result) == AcquiredInfo::VENDOR && vendorCode == 201) {
+        if (static_cast<AcquiredInfo>(result) == AcquiredInfo::VENDOR && 
+           (vendorCode == 201 || vendorCode == 202)) {
             onFingerUp();
         }
     }
