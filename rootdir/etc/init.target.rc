@@ -96,8 +96,17 @@ on fs
 
 on post-fs
     #Execute virtualization manager
-    enable vendor.qvirtservice_rs
-    start  vendor.qvirtservice_rs
+    on property:ro.vendor.vm.ssr.enable=
+        enable vendor.qvirtservice_rs
+        start  vendor.qvirtservice_rs
+    on property:ro.vendor.vm.ssr.enable=false
+        enable vendor.qvirtservice_rs
+        start  vendor.qvirtservice_rs
+    on property:ro.vendor.vm.ssr.enable=true
+        enable vendor.qvirtservice_rs
+        start  vendor.qvirtservice_rs
+        enable vendor.qvirtvendorservice
+        start  vendor.qvirtvendorservice
 
 on late-fs
     #exec_start wait_for_keymaster
@@ -257,13 +266,27 @@ on post-fs-data
     chown root system /sys/module/metis/parameters/trace_motion_event
     chmod 0666 /sys/module/metis/parameters/cold_start_app_tgid
     restorecon /sys/module/metis/parameters/cold_start_app_tgid
+    chmod 0666 /sys/module/metis/parameters/metis_wakeup_enable
+    restorecon /sys/module/metis/parameters/metis_wakeup_enable
+    chmod 0666 /sys/module/metis/parameters/metis_wakeup_task
+    restorecon /sys/module/metis/parameters/metis_wakeup_task
     chmod 0666 /sys/module/metis/parameters/protect_cs
     restorecon /sys/module/metis/parameters/protect_cs
+    chmod 0666 /sys/module/metis/parameters/metis_schlat_enable
+    restorecon /sys/module/metis/parameters/metis_schlat_enable
+    chmod 0666 /sys/module/metis/parameters/common_persist_vip_task
+    restorecon /sys/module/metis/parameters/common_persist_vip_task
+    chmod 0666 /sys/module/metis/parameters/clear_persist_vip_task
+    restorecon /sys/module/metis/parameters/clear_persist_vip_task
 
     chmod 0666 /dev/metis_link
     restorecon /dev/metis_link
     chmod 0666 /sys/module/metis/parameters/mi_lock_blocked_pid
     restorecon /sys/module/metis/parameters/mi_lock_blocked_pid
+    chmod 0666 /dev/mi_group
+    restorecon /dev/mi_group
+    chmod 0666 /dev/mi_frameload
+    restorecon /dev/mi_frameload
 
     chmod 0666 /sys/module/metis/parameters/stask_prefer_cluster
     restorecon /sys/module/metis/parameters/stask_prefer_cluster
@@ -280,6 +303,36 @@ on post-fs-data
     chmod 0666 /sys/module/metis/parameters/force_cluster_sched_enable
     restorecon /sys/module/metis/parameters/force_cluster_sched_enable
 
+    chmod 0666 /sys/module/migt/parameters/flt_target_fps
+    restorecon /sys/module/migt/parameters/flt_target_fps
+    chmod 0666 /sys/module/migt/parameters/flt_cal_freq_enable
+    restorecon /sys/module/migt/parameters/flt_cal_freq_enable
+    chmod 0666 /sys/module/migt/parameters/flt_low_freq
+    restorecon /sys/module/migt/parameters/flt_low_freq
+    chmod 0666 /sys/module/metis/parameters/flt_enable_other
+    restorecon /sys/module/metis/parameters/flt_enable_other
+    chmod 0666 /sys/module/mist/parameters/dflt_stallratio_thresh
+    restorecon /sys/module/mist/parameters/dflt_stallratio_thresh
+    chmod 0666 /sys/module/migt/parameters/flt_target_delta
+    restorecon /sys/module/migt/parameters/flt_target_delta
+    chmod 0666 /sys/module/migt/parameters/frame_boost_enable
+    restorecon /sys/module/migt/parameters/frame_boost_enable
+    chmod 0666 /sys/module/migt/parameters/flt_choose_avg_num
+    restorecon /sys/module/migt/parameters/flt_choose_avg_num
+    chmod 0666 /sys/module/migt/parameters/flt_frame_divisor
+    restorecon /sys/module/migt/parameters/flt_frame_divisor
+    chmod 0666 /sys/module/migt/parameters/flt_in_frame_up_margin
+    restorecon /sys/module/migt/parameters/flt_in_frame_up_margin
+    chmod 0666 /sys/module/migt/parameters/flt_in_frame_down_margin
+    restorecon /sys/module/migt/parameters/flt_in_frame_down_margin
+    chmod 0666 /sys/module/mist/parameters/mist_memlat_vote_enable
+    restorecon /sys/module/mist/parameters/mist_memlat_vote_enable
+    chmod 0666 /sys/module/mist/parameters/dflt_bw_enable
+    restorecon /sys/module/mist/parameters/dflt_bw_enable
+    chmod 0666 /sys/module/mist/parameters/dflt_lat_enable
+    restorecon /sys/module/mist/parameters/dflt_lat_enable
+    chmod 0666 /sys/module/mist/parameters/gflt_enable
+    restorecon /sys/module/mist/parameters/gflt_enable
     chmod 0666 /sys/module/speed_touch/parameters/speed_touch_enable
     restorecon /sys/module/speed_touch/parameters/speed_touch_enable
     chown root system /sys/module/speed_touch/parameters/speed_touch_enable
@@ -300,6 +353,7 @@ on post-fs-data
     chown root system /sys/module/metis/parameters/speed_touch_enable
 
     mkdir /vendor/data/tombstones 0771 system system
+
     # add wlan log output path
     mkdir /data/vendor/wlan_logs 0777 root shell
     # use nv mac
@@ -378,6 +432,7 @@ on early-boot
     wait /sys/kernel/cnss/fs_ready 1
     # Enable WLAN cold boot calibration
     write /sys/kernel/cnss/fs_ready 1
+    setprop ro.surface_flinger.supports_background_blur ${vendor.display.supports_background_blur}
     verity_update_state
     #Enable WLAN SSR recovery
     write /sys/kernel/cnss/recovery 3
@@ -425,6 +480,19 @@ on boot
     chmod 0664 /sys/powersave/boost
     # END Power_PowerSaveModeV2
 
+    # MIUI ADD: Power_UnionPowerCore
+    chown root system /sys/unionpower/frame_jank
+    chown root system /sys/module/unionpower/parameters/FRAME_MONITOR_ENABLE
+    chown root system /sys/module/unionpower/parameters/JANK_LIMIT
+    chown root system /sys/module/unionpower/parameters/NICE_MORE_LIMIT
+    chown root system /sys/module/unionpower/parameters/VSYNC_GAP
+    chmod 0664 /sys/unionpower/frame_jank
+    chmod 0664 /sys/module/unionpower/parameters/FRAME_MONITOR_ENABLE
+    chmod 0664 /sys/module/unionpower/parameters/JANK_LIMIT
+    chmod 0664 /sys/module/unionpower/parameters/NICE_MORE_LIMIT
+    chmod 0664 /sys/module/unionpower/parameters/VSYNC_GAP
+    # END Power_UnionPowerCore
+
     #MIUI ADD: Memory_CLD
     #ufscld functions permission
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/auto_hibern8_enable
@@ -436,42 +504,6 @@ on boot
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger_interval
     chmod 664 /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger
     #END Memory_CLD
-
-    # add torch node for cit && mmi
-    chown system system /sys/class/leds/led:torch_0/brightness
-    chown system system /sys/class/leds/led:torch_1/brightness
-    chown system system /sys/class/leds/led:torch_2/brightness
-    chown system system /sys/class/leds/led:torch_3/brightness
-    chown system system /sys/class/leds/led:flash_0/brightness
-    chown system system /sys/class/leds/led:flash_1/brightness
-    chown system system /sys/class/leds/led:flash_2/brightness
-    chown system system /sys/class/leds/led:flash_3/brightness
-    chown system system /sys/class/leds/led:switch_0/brightness
-    chown system system /sys/class/leds/led:switch_1/brightness
-    chown system system /sys/class/leds/led:switch_2/brightness
-    chown system system /sys/class/leds/led:switch_3/brightness
-    chown system system /sys/class/leds/led:switch_0/trigger
-    chown system system /sys/class/leds/led:switch_1/trigger
-    chown system system /sys/class/leds/led:switch_2/trigger
-    chown system system /sys/class/leds/led:switch_3/trigger
-    chown system system /sys/class/leds/flashlight/brightness
-    chmod 0664 /sys/class/leds/led:torch_0/brightness
-    chmod 0664 /sys/class/leds/led:torch_1/brightness
-    chmod 0664 /sys/class/leds/led:torch_2/brightness
-    chmod 0664 /sys/class/leds/led:torch_3/brightness
-    chmod 0664 /sys/class/leds/led:flash_0/brightness
-    chmod 0664 /sys/class/leds/led:flash_1/brightness
-    chmod 0664 /sys/class/leds/led:flash_2/brightness
-    chmod 0664 /sys/class/leds/led:flash_3/brightness
-    chmod 0664 /sys/class/leds/led:switch_0/brightness
-    chmod 0664 /sys/class/leds/led:switch_1/brightness
-    chmod 0664 /sys/class/leds/led:switch_2/brightness
-    chmod 0664 /sys/class/leds/led:switch_3/brightness
-    chmod 0664 /sys/class/leds/led:switch_0/trigger
-    chmod 0664 /sys/class/leds/led:switch_1/trigger
-    chmod 0664 /sys/class/leds/led:switch_2/trigger
-    chmod 0664 /sys/class/leds/led:switch_3/trigger
-    chmod 0664 /sys/class/leds/flashlight/brightness
 
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
@@ -691,3 +723,29 @@ on property:persist.vendor.lp.fcs.enable=true
 on property:persist.vendor.lp.fcs.enable=false
     write /sys/class/net/wlan0/unit_test_target "67 4 103 0 2 0"
     write /sys/class/net/wlan0/unit_test_target "67 4 103 1 2 0"
+
+#for online boot cpu
+on property:sys.boot_completed=1
+    wait /sys/class/thermal/thermal_message/boot_complete
+    write /sys/class/thermal/thermal_message/boot_complete 2
+
+service mi-serial-sh /odm/bin/init.mi.serial.sh
+    class late_start
+    user root
+    group root system radio
+    disabled
+    oneshot
+
+on post-fs && property:ro.product.device=yupei
+    start mi-serial-sh
+on property:ro.product.device=yupei && property:ro.vendor.ril.oem.sno=*
+    setprop ro.ril.oem.sno ${ro.vendor.ril.oem.sno}
+on property:ro.product.device=yupei && property:ro.vendor.ril.oem.psno=*
+    setprop ro.ril.oem.psno ${ro.vendor.ril.oem.psno}
+
+on post-fs && property:ro.product.device=piano
+    start mi-serial-sh
+on property:ro.product.device=piano && property:ro.vendor.ril.oem.sno=*
+    setprop ro.ril.oem.sno ${ro.vendor.ril.oem.sno}
+on property:ro.product.device=piano && property:ro.vendor.ril.oem.psno=*
+    setprop ro.ril.oem.psno ${ro.vendor.ril.oem.psno}

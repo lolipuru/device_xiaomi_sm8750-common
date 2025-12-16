@@ -108,6 +108,7 @@ subsystem mem_buf_vm
 /dev/ipa_adpl             0660   system     oem_2905
 /dev/synx_device          0660   root       camera
 /dev/ubwcp                0660   root       camera
+/dev/dio_dma_mapper_misc  0660   system     camera
 /dev/hab                  0666   system     system
 /dev/iio:device*          0664   system     system
 /dev/qmc_dma              0660   radio      radio
@@ -477,6 +478,8 @@ subsystem mem_buf_vm
 #Haptics class devices
 /sys/class/qcom-haptics    visense_enabled     0400    system    system
 /sys/class/qcom-haptics    primitive_duration  0600    system    system
+/sys/class/qcom-haptics    v_gain_error        0640    system    audio
+/sys/class/qcom-haptics    i_gain_error        0640    system    audio
 
 # NPU device
 /dev/msm_npu             0644   system     system
