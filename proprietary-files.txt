@@ -91,11 +91,13 @@ vendor/lib64/libloadalgo_stub.so
 vendor/lib64/libvmmem.so
 
 # Audio
+odm/etc/audio/hrtf5c.bin
 odm/etc/audio/silent-3sec.wav
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libcrussp.so
 odm/lib64/libwindns.so;DISABLE_CHECKELF
 vendor/bin/hw/audiohalservice.qti
+vendor/etc/hrtf5c.bin
 vendor/etc/init/audiohalservice_qti.rc
 vendor/etc/models/acd/environment.eai
 vendor/etc/models/acd/event.eai
@@ -123,12 +125,14 @@ vendor/lib64/libaudioroute.so:vendor/lib64/libaudioroute-xiaomi.so;FIX_SONAME
 vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
 vendor/lib64/libav_lvacfsencoder.so
 vendor/lib64/libav_miwnsencoder.so
+vendor/lib64/libcodecclientmanager.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdlbpreg.so
 vendor/lib64/liblvacfs_wrapper.so
+vendor/lib64/libmediautils_vendor.so;MODULE_SUFFIX=-vendor
 vendor/lib64/liblx-ar_util.so
 vendor/lib64/liblx-osal.so
 vendor/lib64/libmcs.so
@@ -263,6 +267,7 @@ vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
 # Bluetooth (A2DP)
 vendor/lib64/btaudio_offload_if.so;DISABLE_CHECKELF
 vendor/lib64/lib_bt_lhdc.so
+vendor/lib64/lib_bt_mihc.so
 vendor/lib64/libbluetooth_audio_session_aidl_qti.so;DISABLE_CHECKELF
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libbluetooth_audio_session_qti.so
@@ -395,6 +400,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile7.xml
 vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
 vendor/etc/init/cnd.rc
+vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.data.iwlandata.xml
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
@@ -505,12 +511,22 @@ vendor/bin/qwesd
 vendor/bin/shsusrd
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/nicm_config.xml
+vendor/etc/data/tlpd_oem_config.xml
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/nicmd.rc
 vendor/etc/init/port-bridge.rc
 vendor/etc/init/shsusrd.rc
 vendor/etc/seccomp_policy/atfwd@2.0.policy
+vendor/etc/modem/Diag.cfg
+vendor/etc/modem/Diag_RF.cfg
+vendor/etc/modem/Diag_data.cfg
+vendor/etc/modem/Diag_default.cfg
+vendor/etc/modem/Diag_global.cfg
+vendor/etc/modem/Diag_ims.cfg
+vendor/etc/modem/Diag_power.cfg
+vendor/etc/modem/network_scan_config.cfg
+vendor/etc/modem/power.cfg
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -584,6 +600,9 @@ vendor/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so
 # Display HDR
 vendor/lib64/libhdr_backlight_adapter.so
 vendor/lib64/libhdr_tm.so
+vendor/lib64/libhdrdynamic.so
+vendor/lib64/libhdrdynamicootf.so
+vendor/lib64/libhdrvivid.so
 
 # Display HWC
 vendor/bin/hw/vendor.qti.hardware.display.composer-service
@@ -835,9 +854,13 @@ vendor/lib64/libxtadapter.so
 
 # Graphics
 vendor/app/com.qualcomm.qti.gpudrivers.sun.api35/com.qualcomm.qti.gpudrivers.sun.api35.apk
+vendor/gpu/kbc/sequence_manifest_a730.bin
 vendor/gpu/kbc/sequence_manifest.bin
+vendor/gpu/kbc/unified_kbcs_32_a730.bin
 vendor/gpu/kbc/unified_kbcs_32.bin
+vendor/gpu/kbc/unified_kbcs_64_a730.bin
 vendor/gpu/kbc/unified_kbcs_64.bin
+vendor/gpu/kbc/unified_ksqs_a730.bin
 vendor/gpu/kbc/unified_ksqs.bin
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
@@ -850,10 +873,12 @@ vendor/lib64/libCB.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libOpenCL_adreno.so
 vendor/lib64/libadreno_app_profiles.so
+vendor/lib64/libadreno_compiler_cl.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libgpudataproducer.so
 vendor/lib64/libgsl.so
 vendor/lib64/libkcl.so
+vendor/lib64/libkcl_a730.so
 vendor/lib64/libkernelmanager.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
@@ -867,9 +892,13 @@ odm/firmware/gen80000_zap.mbn
 vendor/firmware/gen70900_aqe.fw
 vendor/firmware/gen70900_sqe.fw
 vendor/firmware/gen70900_zap.mbn
+vendor/firmware/gen70e00_sqe.fw
+vendor/firmware/gen70e00_zap.mbn
+vendor/firmware/gen71700_gmu.bin
 vendor/firmware/gen80000_aqe.fw
 vendor/firmware/gen80000_gmu.bin
 vendor/firmware/gen80000_sqe.fw
+vendor/firmware/gen80600_gmu.bin
 vendor/firmware/gmu_gen70900.bin
 
 # HDCP
@@ -1046,6 +1075,7 @@ vendor/lib64/liblistensoundmodelaidl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 
 # Media
+odm/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
 vendor/bin/init.qti.media.sh
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
@@ -1095,10 +1125,24 @@ vendor/lib64/libqcodec2_srfilter.so;DISABLE_CHECKELF
 vendor/lib64/libqcodec2_streaminteg_filter.so
 vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
+vendor/lib64/libqcodec2_videofrcfilter.so
+vendor/lib64/libresourcemanager.so
+vendor/lib64/libvideoservice_utils.so
 vendor/lib64/qti.video.utils.videobufferlayout.so
+vendor/lib64/vendor.xiaomi.hardware.videoservice-V7-ndk.so
 
-# Mediaeventgatherservice
-odm/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
+# Media (Xiaomi)
+vendor/bin/hw/android.hardware.media.c2-mi-service
+vendor/etc/media_codecs_mi_c2_audio.xml
+vendor/etc/init/android.hardware.media.c2-mi-service.rc
+vendor/etc/vintf/manifest/media_c2_mi.xml
+vendor/lib64/lib_AIVC_decoder.so
+vendor/lib64/lib_AIVC_encoder.so
+vendor/lib64/libcodec2_soft_aivc_dec.so
+vendor/lib64/libcodec2_soft_aivc_enc.so
+vendor/lib64/libcodec2_soft_mihc_dec.so
+vendor/lib64/libcodec2_soft_mihc_enc.so
+vendor/lib64/libcodec2_store_mi.so
 
 # MiCharge
 vendor/bin/hw/vendor.xiaomi.hardware.micharge-service
@@ -1506,6 +1550,7 @@ vendor/bin/tlpd
 vendor/bin/init.qcrild.sh
 vendor/etc/xiaomi_ecc_list.xml
 vendor/etc/xiaomi_ecc_list_preference.xml
+vendor/etc/bpf/qmsUidStats.o
 vendor/etc/init/libxiaomi_qcril.rc
 vendor/etc/init/qcrilNrd.rc
 vendor/etc/init/qms.rc
@@ -1680,6 +1725,8 @@ vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
 
 # SMC Invoke
+vendor/bin/hlosminkdaemon
+vendor/etc/init/hlosminkdaemon.rc
 vendor/etc/ssg/ta_config.json
 vendor/lib64/libminkdescriptor.so
 vendor/lib64/libminksocket_vendor.so
@@ -1707,6 +1754,7 @@ vendor/lib64/vendor.qti.hardware.secureprocessor.config-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.secureprocessor.device-V1-ndk.so
 
 # Sensors
+odm/etc/init/init.boled.lightsensor.rc
 odm/lib64/libclient2slpi.notifier.so
 odm/lib64/sensors.touch.detect.so
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate-service
@@ -1829,6 +1877,7 @@ vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
 
 # Uevent
 odm/etc/ueventd.rc
+vendor/etc/fw_dir.ueventd.qcom.rc
 
 # Video
 vendor/lib64/libstreamparser.so
