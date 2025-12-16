@@ -18,7 +18,6 @@ ro.vendor.audio.feature.fade=true
 ro.vendor.audio.feature.spatial=5
 ro.vendor.audio.gain.support=true
 ro.vendor.audio.game.mode=true
-ro.vendor.audio.misound.bluetooth.enable=true
 ro.vendor.audio.multi.channel=true
 ro.vendor.audio.multichannel.5point1.headset=true
 ro.vendor.audio.multichannel.5point1=false
