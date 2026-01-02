@@ -89,8 +89,6 @@ ro.vendor.bluetooth.btconfigstore=false
 
 # Camera
 ro.camera.enableCamera1MaxZsl=1
-ro.camera.disableHeicUltraHDR=true
-ro.camera.resultFmqSize=4194304
 ro.camerax.extensions.enabled=true
 
 # Display
@@ -199,6 +197,15 @@ vendor.gatekeeper.is_security_level_spu=0
 # Media
 debug.stagefright.c2inputsurface=-1
 media.c2.hal.selection=aidl
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.mediaserver.64b.enable=true
+vendor.media.omx=0
 
 # QCOM
 ro.soc.manufacturer=QTI
