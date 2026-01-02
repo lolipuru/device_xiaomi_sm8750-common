@@ -1,0 +1,1 @@
+allow ueventd vendor_sysfs_xm_power:chr_file create;

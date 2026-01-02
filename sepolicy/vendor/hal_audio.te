@@ -1,2 +1,18 @@
-allow hal_audio_default sound_device:chr_file rw_file_perms;
+type hal_mediaeventgatherservice_service, hal_service_type, service_manager_type;
+
+hal_client_domain(hal_audio_default, hal_aidl_dms)
+hal_client_domain(hal_audio_default, hal_micharge)
+unix_socket_connect(hal_audio_default, property, hal_sensors_default)
+
+get_prop(hal_audio_default, vendor_audio_cloud_ctrl_mi_prop)
+get_prop(hal_audio_default, vendor_audio_mi_prop)
+
+r_dir_file(hal_audio_default, vendor_persist_audio_file)
+
+allow hal_audio_default audio_socket:sock_file rw_file_perms;
+allow hal_audio_default hal_mediaeventgatherservice_service:fd *;
 allow hal_audio_default sysfs:file rw_file_perms;
+allow hal_audio_default vendor_persist_audio_file:dir rw_dir_perms;
+allow hal_audio_default vendor_persist_audio_file:file { rw_file_perms create };
+allow hal_audio_default vendor_persist_sensors_file:dir { open read search write };
+allow hal_audio_default vendor_persist_sensors_file:file { open read };
