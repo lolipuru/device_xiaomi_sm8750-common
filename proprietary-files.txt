@@ -108,8 +108,6 @@ vendor/lib64/android.media.audio.common.types-V6-ndk.so
 vendor/lib64/hw/libaudiocorehal.default.so;REQUIRED=manifest_audiocorehal_default.xml;DISABLE_DEPS
 vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
 vendor/lib64/hw/libaudioeffecthal.qti.so;REQUIRED=audioeffectservice_qti.xml;DISABLE_DEPS
-vendor/lib64/hw/libsoundtriggerhal.qti.so;MODULE_SUFFIX=-vendor
-vendor/etc/vintf/manifest/soundtrigger.qti.xml
 vendor/lib64/lib_lvacfs.so
 vendor/lib64/libadm.so
 vendor/lib64/libar-acdb.so
@@ -132,7 +130,6 @@ vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdlbpreg.so
 vendor/lib64/liblvacfs_wrapper.so
-vendor/lib64/libmediautils_vendor.so;MODULE_SUFFIX=-vendor
 vendor/lib64/liblx-ar_util.so
 vendor/lib64/liblx-osal.so
 vendor/lib64/libmcs.so

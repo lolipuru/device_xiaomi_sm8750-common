@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
     libloudnessenhanceraidl \
     libreverbaidl \
     libreverbwrapper \
+    libsoundtriggerhal.qti \
     libvisualizeraidl \
     libvui_intf
 
