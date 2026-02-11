@@ -219,20 +219,6 @@ vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardw
 vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_xiaomi.so;FIX_SONAME
 vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_xiaomi.so;FIX_SONAME;DISABLE_CHECKELF
 
-# Batteryantiaging Service
-odm/etc/charger/BAA_config_common.json
-vendor/bin/hw/vendor.xiaomi.hardware.batteryantiaging-service
-vendor/etc/init/vendor.xiaomi.hardware.batteryantiaging-service.rc
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.batteryantiaging.xml
-vendor/lib64/libbaa_BasedOnCC_VolDown.so
-vendor/lib64/libbaa_ChargeInfo.so
-vendor/lib64/libbaa_ClosedSourceClass.so
-vendor/lib64/libbaa_common.so
-vendor/lib64/libbaa_ExampleClass.so
-vendor/lib64/libbaa_FreqChgFvDown.so
-vendor/lib64/libbaa_LowSohFvDown.so
-vendor/lib64/vendor.xiaomi.hardware.batteryantiaging-V1-ndk.so
-
 # Batterysecret
 vendor/bin/batterysecret
 vendor/etc/init/hw/init.batterysecret.rc
