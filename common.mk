@@ -132,6 +132,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+ifeq ($(filter dada xuanyuan,$(TARGET_DEVICE)),)
+# Euicc
+PRODUCT_PACKAGES += \
+    XiaomiEuicc
+endif
+
 # Fastboot
 PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery \
