@@ -294,6 +294,11 @@ PRODUCT_PACKAGES += \
     qspa_vendor.rc \
     vendor.qti.qspa-service
 
+ifeq ($(filter piano,$(TARGET_DEVICE)),)
+# Recovery
+$(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
+endif
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom \
